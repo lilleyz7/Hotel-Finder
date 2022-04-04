@@ -1,0 +1,250 @@
+<WindowManager>
+
+    Screen:
+        name: "home"
+
+        BoxLayout:
+            orientation: "vertical"
+            size: root.width, root.height
+            padding: 50
+            spacing: 25
+
+            MDLabel:
+                id: title_label
+                text: 'Hotel Finder'
+                font_size: 40
+                halign: 'center'
+                height: self.texture_size[1]
+                padding_y: 15
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: city
+                multiline: False
+                helper_text: "Destination City"
+                helper_text_mode: "persistent"
+                icon_right: 'city-variant'
+                size_hint_x: None
+                width: 250
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: min
+                helper_text: "Minimum Price"
+                helper_text_mode: "persistent"
+                icon_right: "cash-minus"
+                size_hint_x: None
+                width: 250
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: max
+                helper_text: "Maximum Price"
+                helper_text_mode: "persistent"
+                icon_right: "cash-plus"
+                size_hint_x: None
+                width: 250
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: sortBy
+                helper_text: "sort by PRICE or RATING"
+                helper_text_mode: "persistent"
+                icon_right: "city-variant"
+                size_hint_x: None
+                width: 250
+                pos_hint: {"center_x": 0.5}
+
+            MDRoundFlatButton:
+                text: "Submit"
+                font_size: 15
+                pos_hint: {"center_x": 0.5}
+                on_press: app.get_variables()
+                on_release: app.root.current = 'result'
+
+            MDRoundFlatButton:
+                text: "Clear Fields"
+                font_size: 15
+                pos_hint: {"center_x": 0.5}
+                on_release: app.clear_fields()
+
+
+    Screen:
+        name: "result"
+        on_enter: app.set_second_screen()
+
+        BoxLayout:
+            orientation: "vertical"
+            size: root.width, root.height
+
+            MDToolbar:
+                title: "Your Hotel Results"
+                halign: 'center'
+                icon: "git"
+                md_bg_color: app.theme_cls.accent_color
+
+
+            MDTabs:
+                Tab:
+                    id: label1
+                    title: "Hotel1"
+                    width: 250
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: hotel1_rating
+                            text: 'Rating: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel1_address
+                            text: 'Address: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel1_price
+                            text: 'Nightly Rate: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                Tab:
+                    id: label2
+                    title: "Hotel2"
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: hotel2_rating
+                            text: 'Rating: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel2_address
+                            text: 'Address: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel2_price
+                            text: 'Nightly Rate: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                Tab:
+                    id: label3
+                    title: "Hotel3"
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: hotel3_rating
+                            text: 'Rating: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel3_address
+                            text: 'Address: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel3_price
+                            text: 'Nightly Rate: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                Tab:
+                    id: label4
+                    title: "Hotel4"
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: hotel4_rating
+                            text: 'Rating: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel4_address
+                            text: 'Address: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel4_price
+                            text: 'Nightly Rate: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                Tab:
+                    id: label5
+                    title: "Hotel5"
+                    width: 250
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            id: hotel5_rating
+                            text: 'Rating: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel5_address
+                            text: 'Address: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+                        MDLabel:
+                            id: hotel5_price
+                            text: 'Nightly Rate: '
+                            font_size: 20
+                            halign: 'center'
+                            height: self.texture_size[1]
+                            padding_y: 15
+                            pos_hint: {"center_x": 0.5}
+
+
